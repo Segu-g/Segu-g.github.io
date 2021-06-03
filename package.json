@@ -1,0 +1,34 @@
+{
+  "name": "segu-g.github.io",
+  "version": "1.0.0",
+  "description": "Github Pages",
+  "scripts": {
+    "build": "webpack --config ./webpack.config.js",
+    "watch": "webpack --config ./webpack.config.js --watch",
+    "server": "http-server ./docs -p 8081 -o"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Segu-g/Segu-g.github.io.git"
+  },
+  "author": "Segu-g",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Segu-g/Segu-g.github.io/issues"
+  },
+  "homepage": "https://github.com/Segu-g/Segu-g.github.io#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^9.0.0",
+    "http-server": "^0.12.3",
+    "ts-loader": "^9.2.2",
+    "typescript": "^4.3.2",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {
+    "@types/react": "^17.0.9",
+    "@types/react-dom": "^17.0.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
