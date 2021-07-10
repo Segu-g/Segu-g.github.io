@@ -7,6 +7,7 @@ import TaskList from "./components/TaskList"
 import TaskRegistor from "./components/TaskRegistor"
 import LinkWrapper from "./components/LinkWrapper"
 
+
 export function App() {
     const dispatch = useDispatch();
     return <Switch>

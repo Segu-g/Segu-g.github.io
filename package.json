@@ -5,7 +5,8 @@
   "scripts": {
     "build": "webpack --config ./webpack.config.js",
     "watch": "webpack --config ./webpack.config.js --watch",
-    "start": "http-server ./docs -p 8081 -o"
+    "start": "http-server ./docs -p 8081 -o",
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
