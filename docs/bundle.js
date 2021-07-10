@@ -2868,6 +2868,21 @@ var structure = {
 
 /***/ }),
 
+/***/ "./styles/app.scss":
+/*!*************************!*\
+  !*** ./styles/app.scss ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "bundle.css");
+
+/***/ }),
+
 /***/ "./node_modules/history/esm/history.js":
 /*!*********************************************!*\
   !*** ./node_modules/history/esm/history.js ***!
@@ -43475,6 +43490,25 @@ function warning(condition, message) {
 
 "use strict";
 
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -43482,20 +43516,25 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.App = void 0;
 const jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 const react_router_1 = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+const react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
 const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const connected_react_router_1 = __webpack_require__(/*! connected-react-router */ "./node_modules/connected-react-router/esm/index.js");
+const store_1 = __importStar(__webpack_require__(/*! ./store */ "./src/store.ts"));
 const TaskList_1 = __importDefault(__webpack_require__(/*! ./components/TaskList */ "./src/components/TaskList.tsx"));
 const TaskRegistor_1 = __importDefault(__webpack_require__(/*! ./components/TaskRegistor */ "./src/components/TaskRegistor.tsx"));
 const LinkWrapper_1 = __importDefault(__webpack_require__(/*! ./components/LinkWrapper */ "./src/components/LinkWrapper.tsx"));
 function App() {
-    const dispatch = react_redux_1.useDispatch();
     return jsx_runtime_1.jsxs(react_router_1.Switch, { children: [jsx_runtime_1.jsxs(react_router_1.Route, Object.assign({ exact: true, path: "/" }, { children: [jsx_runtime_1.jsx(LinkWrapper_1.default, Object.assign({ path: "/home" }, { children: jsx_runtime_1.jsx("div", { children: "Home" }, void 0) }), void 0),
                     jsx_runtime_1.jsx(TaskList_1.default, {}, void 0),
                     jsx_runtime_1.jsx(TaskRegistor_1.default, {}, void 0)] }), void 0),
             jsx_runtime_1.jsxs(react_router_1.Route, Object.assign({ path: "/home" }, { children: [jsx_runtime_1.jsx(LinkWrapper_1.default, Object.assign({ path: "/" }, { children: jsx_runtime_1.jsx("div", { children: "Index" }, void 0) }), void 0),
                     jsx_runtime_1.jsx(TaskList_1.default, {}, void 0),
-                    jsx_runtime_1.jsx(TaskRegistor_1.default, {}, void 0)] }), void 0)] }, void 0);
+                    jsx_runtime_1.jsx(TaskRegistor_1.default, {}, void 0)] }), void 0),
+            jsx_runtime_1.jsx(react_router_1.Route, { path: "/404" }, void 0),
+            jsx_runtime_1.jsx(react_router_1.Redirect, { to: "/404" }, void 0)] }, void 0);
 }
 exports.App = App;
+react_dom_1.default.render(jsx_runtime_1.jsx(react_redux_1.Provider, Object.assign({ store: store_1.default }, { children: jsx_runtime_1.jsx(connected_react_router_1.ConnectedRouter, Object.assign({ history: store_1.history }, { children: jsx_runtime_1.jsx(App, {}, void 0) }), void 0) }), void 0), document.getElementById('root'));
 
 
 /***/ }),
@@ -43606,48 +43645,6 @@ exports.default = TaskRegistor;
 
 /***/ }),
 
-/***/ "./src/main.tsx":
-/*!**********************!*\
-  !*** ./src/main.tsx ***!
-  \**********************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-const jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-const react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
-const app_1 = __webpack_require__(/*! ./app */ "./src/app.tsx");
-const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-const connected_react_router_1 = __webpack_require__(/*! connected-react-router */ "./node_modules/connected-react-router/esm/index.js");
-const store_1 = __importStar(__webpack_require__(/*! ./store */ "./src/store.ts"));
-react_dom_1.default.render(jsx_runtime_1.jsx(react_redux_1.Provider, Object.assign({ store: store_1.default }, { children: jsx_runtime_1.jsx(connected_react_router_1.ConnectedRouter, Object.assign({ history: store_1.history }, { children: jsx_runtime_1.jsx(app_1.App, {}, void 0) }), void 0) }), void 0), document.getElementById('root'));
-
-
-/***/ }),
-
 /***/ "./src/modules/tasksModule.ts":
 /*!************************************!*\
   !*** ./src/modules/tasksModule.ts ***!
@@ -43747,6 +43744,11 @@ exports.history = void 0;
 const history_1 = __webpack_require__(/*! history */ "./node_modules/history/esm/history.js");
 const rootReducer_1 = __importDefault(__webpack_require__(/*! ./rootReducer */ "./src/rootReducer.ts"));
 exports.history = history_1.createBrowserHistory();
+const params = (new URL(location.href)).searchParams.get("p");
+console.log(params);
+if (params) {
+    exports.history.push(params);
+}
 const store = rootReducer_1.default(exports.history);
 exports.default = store;
 
@@ -43895,13 +43897,34 @@ function valueEqual(a, b) {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/main.tsx");
+/******/ 	__webpack_require__("./src/app.tsx");
+/******/ 	var __webpack_exports__ = __webpack_require__("./styles/app.scss");
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=bundle.js.map
