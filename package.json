@@ -1,0 +1,31 @@
+{
+  "name": "segu-g.github.io",
+  "version": "0.0.1",
+  "description": "Segu's Github Pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Segu-g/Segu-g.github.io.git"
+  },
+  "author": "Segu-g",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Segu-g/Segu-g.github.io/issues"
+  },
+  "homepage": "https://github.com/Segu-g/Segu-g.github.io#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.26.1",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.4.4",
+    "webpack": "^5.62.1",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}
