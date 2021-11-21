@@ -10,9 +10,12 @@
         const origin = window.location.origin;
         const path = window.location.pathname;
         const index = new URL(origin);
+        for (const [key, val] of new URLSearchParams(window.location.search)
+            .entries()
+            .filter(([key,]) => key != "path")
+        )
+            index.searchParams.append(key, val);
         index.searchParams.append("path", path)
-        if (document.referrer)
-            index.searchParams.append("utm_referrer", referrer)
         window.location.href = index.href;
     </script>
 </head>
