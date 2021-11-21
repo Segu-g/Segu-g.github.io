@@ -16,8 +16,8 @@ const redirectWithPrams = () => {
 };
 
 class Root extends React.Component{
-    constructor() {
-        super({});
+    constructor(props: Record<string, never>) {
+        super(props);
         redirectWithPrams();
     }
 
