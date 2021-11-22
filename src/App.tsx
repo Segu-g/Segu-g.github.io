@@ -1,14 +1,13 @@
-import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route, Outlet, Navigate } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Index from "./pages/Index";
-import _404 from "./pages/404";
+import NotFound from "./pages/NotFound";
 
 const App: React.FC = () => <BrowserRouter>
     <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="404" element={<_404 />} />
-        {/* <Navigate to="/404" /> */}
+        <Route path="*" element={<NotFound />} />
     </Routes>
 </BrowserRouter>;
 export default App;
