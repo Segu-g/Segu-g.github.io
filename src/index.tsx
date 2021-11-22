@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Recoil from "recoil";
+import { RecoilRoot } from "recoil";
 import App from "./App";
 
 const redirectWithPrams = () => {
@@ -23,15 +23,15 @@ class Root extends React.Component{
 
     render(): React.ReactNode {
         return (<React.StrictMode>
-            <Recoil.RecoilRoot>
+            <RecoilRoot>
                 <App />
-            </Recoil.RecoilRoot>
+            </RecoilRoot>
         </React.StrictMode>);
     }
     
 }
 
-
+console.log("Hello!");
 ReactDOM.render(
     <Root />,
     document.getElementById("root")
