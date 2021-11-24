@@ -4,6 +4,7 @@
   "description": "Segu's Github Pages",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf ./docs",
     "build": "webpack --config webpack.config.js --mode production",
     "watch": "webpack --config webpack.config.js --watch --mode development",
     "serve": "python3 -m http.server --directory ./docs 8082",
