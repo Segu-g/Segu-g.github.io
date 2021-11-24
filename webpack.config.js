@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 
@@ -14,14 +16,22 @@ module.exports = {
         rules: [
             {
                 test: /\.(ts|tsx|js|jsx)$/,
-                use: "ts-loader",
+                use: {
+                    loader: "ts-loader",
+                    options: {
+                        configFile: path.resolve(__dirname, "tsconfig.json"),
+                    },
+                },
             }
         ]
     },
     resolve: {
         extensions: [
             ".ts", ".tsx", ".js", ".jsx"
-        ]
+        ],
+        alias: {
+            "@": path.resolve(__dirname, "src"),
+        }
     },
     optimization: {
      splitChunks: {
