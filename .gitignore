@@ -1,3 +1,6 @@
+# Build directory
+docs
+
 # Logs
 logs
 *.log
