@@ -2,13 +2,19 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 
-const rootDir = resolve(__dirname, "./src/pages") 
+const rootDir = resolve(__dirname, "./html") 
 
 // https://vite.dev/config/
 export default defineConfig({
   root: rootDir,
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+    }
+  },
   build: {
-    outDir: "dist",
+    outDir: resolve(__dirname, "./dist"),
+    emptyOutDir: true,
     rollupOptions: {
       input: {
         main: resolve(rootDir, "./index.html")
