@@ -1,0 +1,49 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Git user configuration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      
+      - name: Git merge
+        run: |
+          git fetch origin release
+          git checkout release
+          git merge --no-commit --strategy-option theirs main
+      
+      - name: Setup nodejs and yarn
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          cache: yarn
+      
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Format and build
+        run: yarn run lint && yarn run build
+      
+      - name: Commit
+        run: |
+          # Update .gitignore in order to git add dist folder
+          sed -i "/^\s*dist\s*$/d" .gitignore
+          git add .gitignore ./dist
+          git commit -m "auto release from main ($(date +'%Y-%m-%d %H:%M:%S'))"
+          git push
