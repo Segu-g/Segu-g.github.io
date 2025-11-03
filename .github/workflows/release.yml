@@ -10,7 +10,6 @@ permissions:
 jobs:
   build:
     name: build
-    if: github.repository == '<owner>/<repo>'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
