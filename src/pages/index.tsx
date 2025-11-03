@@ -3,6 +3,6 @@ import { createRoot } from 'react-dom/client'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    Hello, world!
+    Hello, vite world!
   </StrictMode>
 )
