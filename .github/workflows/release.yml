@@ -42,8 +42,8 @@ jobs:
       
       - name: Commit
         run: |
-          # Update .gitignore in order to git add dist folder
-          sed -i "/^\s*dist\s*$/d" .gitignore
-          git add .gitignore ./dist
+          # Update .gitignore in order to git add docs folder
+          sed -i "/^\s*docs\s*$/d" .gitignore
+          git add .gitignore ./docs
           git commit -m "auto release from main ($(date +'%Y-%m-%d %H:%M:%S'))"
           git push
